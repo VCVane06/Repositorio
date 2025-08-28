@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principios de la Naturaleza y Sustentabilidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #2e7d32;
+            --color-secondary: #1b5e20;
+            --color-accent: #7cb342;
+            --color-light: #f1f8e9;
+            --color-dark: #1b1b1b;
+            --color-text: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background: linear-gradient(to bottom, #f9f9f9, #e8f5e9);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.1"><circle cx="50" cy="50" r="40" fill="white"/></svg>');
+            background-size: 200px;
+            opacity: 0.1;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .student-info {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin: 1rem 0;
+            padding: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .header-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: white;
+            color: var(--color-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        nav {
+            background-color: white;
+            padding: 1rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        nav a:hover {
+            color: var(--color-accent);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .unit {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 5px solid var(--color-accent);
+        }
+        
+        .unit:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .unit-header {
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .unit-icon {
+            font-size: 2rem;
+            color: var(--color-accent);
+        }
+        
+        .topic {
+            margin-bottom: 2.2rem;
+            padding: 1.2rem;
+            border-radius: 8px;
+            background-color: var(--color-light);
+            transition: var(--transition);
+        }
+        
+        .topic:hover {
+            background-color: #e8f5e9;
+        }
+        
+        .topic h3 {
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .topic-icon {
+            color: var(--color-accent);
+            font-size: 1.2rem;
+        }
+        
+        .content-box {
+            background-color: white;
+            padding: 1.5rem;
+            border-left: 4px solid var(--color-accent);
+            border-radius: 6px;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        ul {
+            padding-left: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
+        }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .concept-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--color-accent);
+        }
+        
+        .concept-card h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .principle-list {
+            background: var(--color-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .principle-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--color-accent);
+        }
+        
+        footer {
+            background-color: var(--color-dark);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .unit {
+                padding: 1.5rem;
+            }
+            
+            .header-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--color-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Principios Básicos de la Naturaleza y Sustentabilidad</h1>
+            
+            <!-- Información del estudiante -->
+            <div class="student-info">
+                <p>Vanessa Jazmin Villarreal Contreras | Matrícula: 2094656</p>
+            </div>
+            
+            <p class="subtitle">Una guía educativa sobre los fundamentos ecológicos y desarrollo sostenible</p>
+            <div class="header-buttons">
+                <a href="#unidad1" class="btn">Unidad 1</a>
+                <a href="#unidad2" class="btn btn-outline">Unidad 2</a>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#unidad1"><i class="fas fa-seedling"></i> Unidad 1</a></li>
+            <li><a href="#unidad2"><i class="fas fa-recycle"></i> Unidad 2</a></li>
+            <li><a href="#footer"><i class="fas fa-address-card"></i> Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="unidad1" class="unit">
+            <h2 class="unit-header">
+                <i class="fas fa-seedling unit-icon"></i>
+                Unidad 1: Principios Básicos de la Naturaleza
+            </h2>
+            
+            <div class="topic">
+                <h3><i class="fas fa-leaf topic-icon"></i> 1.1. Conceptos Fundamentales de Ecología</h3>
+                <div class="content-box">
+                    <p>La ecología es el estudio científico de las interrelaciones entre los organismos y su ambiente abiótico (no vivo) y biótico (vivo). Incluye conceptos como:</p>
+                    <ul>
+                        <li><strong>Ecosistemas:</strong> Sistemas formados por una comunidad de seres vivos (biocenosis) y el medio físico donde se relacionan (biotopo)</li>
+                        <li><strong>Biodiversidad:</strong> Variedad de vida en todas sus formas, niveles y combinaciones. Incluye diversidad genética, de especies y de ecosistemas</li>
+                        <li><strong>Hábitat y nicho ecológico:</strong> El hábitat es el lugar donde vive una especie, mientras que el nicho ecológico describe su función en el ecosistema</li>
+                        <li><strong>Comunidad biótica:</strong> Conjunto de poblaciones de diferentes especies que coexisten e interactúan en un área determinada</li>
+                    </ul>
+                </div>
+                
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h4><i class="fas fa-tree"></i> Niveles de organización</h4>
+                        <p>Individuo → Población → Comunidad → Ecosistema → Bioma → Biosfera</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4><i class="fas fa-water"></i> Factores abióticos</h4>
+                        <p>Elementos no vivos como temperatura, luz, agua, suelo, pH y nutrientes que afectan a los organismos</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4><i class="fas fa-users"></i> Factores bióticos</h4>
+                        <p>Interacciones entre organismos como competencia, depredación, mutualismo, comensalismo y parasitismo</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="topic">
+                <h3><i class="fas fa-recycle topic-icon"></i> 1.2. Ciclos Biogeoquímicos</h3>
+                <div class="content-box">
+                    <p>Los elementos esenciales para la vida circulan entre los componentes bióticos y abióticos de la Tierra a través de procesos biogeoquímicos:</p>
+                    
+                    <h4>Ciclo del agua</h4>
+                    <ul>
+                        <li><strong>Evaporación:</strong> El agua se convierte en vapor desde superficies líquidas</li>
+                        <li><strong>Transpiración:</strong> Liberación de vapor de agua por las plantas</li>
+                        <li><strong>Condensación:</strong> Formación de nubes al enfriarse el vapor de agua</li>
+                        <li><strong>Precipitación:</strong> Caída de agua en forma de lluvia, nieve o granizo</li>
+                        <li><strong>Escorrentía:</strong> Desplazamiento superficial del agua hacia ríos, lagos y océanos</li>
+                        <li><strong>Infiltración:</strong> Penetración del agua en el subsuelo para formar acuíferos</li>
+                    </ul>
+                    
+                    <h4>Ciclo del carbono</h4>
+                    <ul>
+                        <li><strong>Fotosíntesis:</strong> Las plantas absorben CO₂ y producen glucosa y oxígeno</li>
+                        <li><strong>Respiración:</strong> Los organismos liberan CO₂ al descomponer glucosa para obtener energía</li>
+                        <li><strong>Descomposición:</strong> Liberación de CO₂ al descomponerse la materia orgánica</li>
+                        <li><strong>Combustión:</strong> Quema de combustibles fósiles que libera CO₂ almacenado</li>
+                        <li><strong>Intercambio oceánico:</strong> Los océanos absorben y liberan CO₂</li>
+                    </ul>
+                    
+                    <h4>Ciclo del nitrógeno</h4>
+                    <ul>
+                        <li><strong>Fijación:</strong> Conversión del N₂ atmosférico en amonio por bacterias especializadas</li>
+                        <li><strong>Nitrificación:</strong> Conversión del amonio en nitritos y luego en nitratos por bacterias</li>
+                        <li><strong>Asimilación:</strong> Absorción de nitratos por las plantas para sintetizar proteínas</li>
+                        <li><strong>Ammonificación:</strong> Conversión de nitrógeno orgánico en amonio durante la descomposición</li>
+                        <li><strong>Desnitrificación:</strong> Conversión de nitratos en N₂ gaseoso que regresa a la atmósfera</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="topic">
+                <h3><i class="fas fa-bolt topic-icon"></i> 1.3. Flujo de Energía en los Ecosistemas</h3>
+                <div class="content-box">
+                    <p>La energía solar es convertida por los productores y fluye a través de las cadenas tróficas en una dirección, con pérdidas en cada transferencia:</p>
+                    
+                    <h4>Niveles tróficos</h4>
+                    <ul>
+                        <li><strong>Productores (autótrofos):</strong> Organismos que fabrican su propio alimento mediante fotosíntesis o quimiosíntesis (plantas, algas, cianobacterias)</li>
+                        <li><strong>Consumidores primarios (herbívoros):</strong> Se alimentan directamente de los productores</li>
+                        <li><strong>Consumidores secundarios (carnívoros):</strong> Se alimentan de herbívoros</li>
+                        <li><strong>Consumidores terciarios:</strong> Depredadores que se alimentan de otros carnívoros</li>
+                        <li><strong>Descomponedores y detritívoros:</strong> Hongos, bacterias y pequeños organismos que descomponen la materia orgánica muerta</li>
+                    </ul>
+                    
+                    <h4>Pirámides ecológicas</h4>
+                    <ul>
+                        <li><strong>Pirámide de energía:</strong> Muestra la disminución de energía disponible en cada nivel trófico (regla del 10%)</li>
+                        <li><strong>Pirámide de biomasa:</strong> Representa la cantidad de materia orgánica presente en cada nivel</li>
+                        <li><strong>Pirámide de números:</strong> Indica el número de individuos en cada nivel trófico</li>
+                    </ul>
+                    
+                    <h4>Redes tróficas</h4>
+                    <p>Complejo entramado de cadenas alimentarias interconectadas que muestra las múltiples relaciones alimentarias en un ecosistema, proporcionando mayor estabilidad que las cadenas lineales simples.</p>
+                </div>
+            </div>
+            
+            <div class="topic">
+                <h3><i class="fas fa-chart-line topic-icon"></i> 1.4. Dinámica de Poblaciones</h3>
+                <div class="content-box">
+                    <p>Estudio de los cambios en el tamaño, densidad, distribución y composición de las poblaciones a lo largo del tiempo:</p>
+                    
+                    <h4>Parámetros poblacionales</h4>
+                    <ul>
+                        <li><strong>Natalidad:</strong> Número de nacimientos por unidad de tiempo</li>
+                        <li><strong>Mortalidad:</strong> Número de muertes por unidad de tiempo</li>
+                        <li><strong>Inmigración:</strong> Entrada de individuos a una población</li>
+                        <li><strong>Emigración:</strong> Salida de individuos de una población</li>
+                    </ul>
+                    
+                    <h4>Patrones de crecimiento</h4>
+                    <ul>
+                        <li><strong>Crecimiento exponencial:</strong> Ocurre cuando los recursos son ilimitados (curva J)</li>
+                        <li><strong>Crecimiento logístico:</strong> Ocurre cuando los recursos son limitados, alcanzando la capacidad de carga (curva S)</li>
+                    </ul>
+                    
+                    <h4>Factores reguladores</h4>
+                    <ul>
+                        <li><strong>Factores dependientes de la densidad:</strong> Enfermedades, competencia, depredación, parasitismo</li>
+                        <li><strong>Factores independientes de la densidad:</strong> Clima, desastres naturales, contaminación</li>
+                    </ul>
+                    
+                    <h4>Relaciones interespecíficas</h4>
+                    <ul>
+                        <li><strong>Competencia:</strong> (-/-) Dos especies compiten por los mismos recursos limitados</li>
+                        <li><strong>Depredación:</strong> (+/-) Un organismo (depredador) se alimenta de otro (presa)</li>
+                        <li><strong>Herbivoría:</strong> (+/-) Un animal se alimenta de plantas o algas</li>
+                        <li><strong>Parasitismo:</strong> (+/-) Un organismo (parásito) se beneficia a expensas de otro (huésped)</li>
+                        <li><strong>Mutualismo:</strong> (+/+) Ambas especies se benefician de la relación</li>
+                        <li><strong>Comensalismo:</strong> (+/0) Una especie se beneficia y la otra no es afectada</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="unidad2" class="unit">
+            <h2 class="unit-header">
+                <i class="fas fa-recycle unit-icon"></i>
+                Unidad 2: Principios de Sustentabilidad
+            </h2>
+            
+            <div class="topic">
+                <h3><i class="fas fa-globe-americas topic-icon"></i> 2.1. Concepto de Desarrollo Sostenible</h3>
+                <div class="content-box">
+                    <p>El desarrollo sostenible se define como "el desarrollo que satisface las necesidades del presente sin comprometer la capacidad de las futuras generaciones para satisfacer sus propias necesidades" (Comisión Brundtland, 1987).</p>
+                    
+                    <h4>Pilares fundamentales</h4>
+                    <div class="concept-grid">
+                        <div class="concept-card">
+                            <h4><i class="fas fa-tree"></i> Sostenibilidad ambiental</h4>
+                            <p>Uso responsable de los recursos naturales, conservación de la biodiversidad y mantenimiento de los procesos ecológicos esenciales</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4><i class="fas fa-users"></i> Sostenibilidad social</h4>
+                            <p>Equidad, justicia social, diversidad cultural, participación comunitaria y calidad de vida para todos</p>
+                        </div>
+                        <div class="concept-card">
+                            <h4><i class="fas fa-chart-line"></i> Sostenibilidad económica</h4>
+                            <p>Eficiencia, innovación, empleo digno y viabilidad financiera a largo plazo</p>
+                        </div>
+                    </div>
+                    
+                    <h4>Objetivos de Desarrollo Sostenible (ODS) de la ONU</h4>
+                    <p>Agenda 2030 incluye 17 objetivos interconectados para lograr un futuro sostenible:</p>
+                    <ul>
+                        <li>Fin de la pobreza</li>
+                        <li>Hambre cero</li>
+                        <li>Salud y bienestar</li>
+                        <li>Educación de calidad</li>
+                        <li>Igualdad de género</li>
+                        <li>Agua limpia y saneamiento</li>
+                        <li>Energía asequible y no contaminante</li>
+                        <li>Trabajo decente y crecimiento económico</li>
+                        <li>Industria, innovación e infraestructura</li>
+                        <li>Reducción de las desigualdades</li>
+                        <li>Ciudades y comunidades sostenibles</li>
+                        <li>Producción y consumo responsables</li>
+                        <li>Acción por el clima</li>
+                        <li>Vida submarina</li>
+                        <li>Vida de ecosistemas terrestres</li>
+                        <li>Paz, justicia e instituciones sólidas</li>
+                        <li>Alianzas para lograr los objetivos</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="topic">
+                <h3><i class="fas fa-shoe-prints topic-icon"></i> 2.2. Huella Ecológica y Capacidad de Carga</h3>
+                <div class="content-box">
+                    <p>Medición del impacto humano sobre el planeta y su comparación con la capacidad de la Tierra para regenerar recursos:</p>
+                    
+                    <h4>Huella ecológica</h4>
+                    <p>Indicador que mide el área de tierra y agua biológicamente productiva que requiere una población para producir los recursos que consume y absorber los residuos que genera, usando la tecnología predominante.</p>
+                    
+                    <ul>
+                        <li>Se expresa en hectáreas globales (hag) por persona</li>
+                        <li>Incluye componentes como: carbono, tierras de cultivo, pastoreo, zonas pesqueras, terreno construido y bosques</li>
+                        <li>La huella media global es de aproximadamente 2.7 hag/persona</li>
+                    </ul>
+                    
+                    <h4>Biocapacidad</h4>
+                    <p>Capacidad de los ecosistemas para producir recursos naturales útiles y absorber los desechos generados por los humanos.</p>
+                    
+                    <ul>
+                        <li>La biocapacidad global es de aproximadamente 1.6 hag/persona</li>
+                        <li>Varía según regiones y países</li>
+                        <li>Está disminuyendo debido a la degradación de ecosistemas</li>
+                    </ul>
+                    
+                    <h4>Déficit ecológico</h4>
+                    <p>Ocurre cuando la huella ecológica de una población excede la biocapacidad del área disponible para esa población. Actualmente, la humanidad utiliza los recursos equivalentes a 1.7 planetas Tierra.</p>
+                    
+                    <h4>Capacidad de carga</h4>
+                    <p>Máximo número de individuos de una especie que un ambiente puede sostener indefinidamente sin degradarse. Para los humanos, depende de:</p>
+                    <ul>
+                        <li>Nivel de consumo per cápita</li>
+                        <li>Tecnología disponible</li>
+                        <li>Distribución de recursos</li>
+                        <li>Resiliencia de los ecosistemas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="topic">
+                <h3><i class="fas fa-pencil-ruler topic-icon"></i> 2.3. Principios de Diseño Sostenible</h3>
+                <div class="content-box">
+                    <p>Enfoques para crear sistemas, productos y entornos que funcionen en armonía con la naturaleza:</p>
+                    
+                    <h4>Economía circular</h4>
+                    <p>Sistema regenerativo en el que el input de recursos y el output de residuos, emisiones y fugas de energía se minimizan mediante la ralentización, el cierre y la estrechamiento de los ciclos de materiales y energía.</p>
+                    
+                    <div class="principle-list">
+                        <h4>Principios de la economía circular:</h4>
+                        <ul>
+                            <li><strong>Diseñar para eliminar residuos y contaminación</strong></li>
+                            <li><strong>Mantener productos y materiales en uso</strong></li>
+                            <li><strong>Regenerar sistemas naturales</strong></li>
+                            <li><strong>Utilizar energías renovables</strong></li>
+                            <li><strong>Pensar en sistemas</strong></li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Cradle to Cradle (de la cuna a la cuna)</h4>
+                    <p>Enfoque de diseño que considera todos los materiales involucrados en procesos industriales o comerciales como nutrientes, clasificándolos en dos categorías:</p>
+                    <ul>
+                        <li><strong>Nutrientes técnicos:</strong> Materiales sintéticos que circulan en ciclos industriales cerrados</li>
+                        <li><strong>Nutrientes biológicos:</strong> Materiales orgánicos que pueden regresar de forma segura a la naturaleza</li>
+                    </ul>
+                    
+                    <h4>Permacultura</h4>
+                    <p>Sistema de principios de diseño agrícola y social, político y económico basado en los patrones y características del ecosistema natural.</p>
+                    
+                    <div class="principle-list">
+                        <h4>Principios de permacultura:</h4>
+                        <ul>
+                            <li>Observar e interactuar</li>
+                            <li>Capturar y almacenar energía</li>
+                            <li>Obtener un rendimiento</li>
+                            <li>Aplicar la autorregulación y aceptar retroalimentación</li>
+                            <li>Usar y valorar los recursos y servicios renovables</li>
+                            <li>No producir residuos</li>
+                            <li>Diseñar desde los patrones hacia los detalles</li>
+                            <li>Integrar más que segregar</li>
+                            <li>Usar soluciones pequeñas y lentas</li>
+                            <li>Usar y valorar la diversidad</li>
+                            <li>Usar los bordes y valorar lo marginal</li>
+                            <li>Usar y responder creativamente al cambio</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="topic">
+                <h3><i class="fas fa-lightbulb topic-icon"></i> 2.4. Estrategias para la Sustentabilidad</h3>
+                <div class="content-box">
+                    <p>Acciones concretas para transitar hacia la sostenibilidad en diferentes ámbitos:</p>
+                    
+                    <h4>Conservación y restauración de ecosistemas</h4>
+                    <ul>
+                        <li><strong>Áreas naturales protegidas:</strong> Parques nacionales, reservas de la biosfera, santuarios</li>
+                        <li><strong>Corredores biológicos:</strong> Conectan fragmentos de hábitat para permitir el flujo genético</li>
+                        <li><strong>Restauración ecológica:</strong> Recuperación de ecosistemas degradados</li>
+                        <li><strong>Reforestación y agroforestería:</strong> Siembra de árboles nativos y sistemas productivos integrados</li>
+                    </ul>
+                    
+                    <h4>Producción y consumo responsables</h4>
+                    <ul>
+                        <li><strong>Economía verde:</strong> Inversiones en sectores que reduzcan emisiones y contaminación</li>
+                        <li><strong>Comercio justo:</strong> Relaciones comerciales equitativas y precios justos</li>
+                        <li><strong>Etiquetado ecológico:</strong> Información al consumidor sobre impactos ambientales</li>
+                        <li><strong>Minimización de residuos:</strong> Reducir, reutilizar, reciclar, recuperar, reparar</li>
+                    </ul>
+                    
+                    <h4>Movilidad sostenible</h4>
+                    <ul>
+                        <li><strong>Transporte público eficiente:</strong> Sistemas masivos, electrificación, tarifas accesibles</li>
+                        <li><strong>Movilidad activa:</strong> Infraestructura para bicicletas y peatones</li>
+                        <li><strong>Vehículos de bajas emisiones:</strong> Eléctricos, híbridos, de hidrógeno</li>
+                        <li><strong>Tele trabajo y videoconferencias:</strong> Reducción de desplazamientos</li>
+                    </ul>
+                    
+                    <h4>Educación ambiental y participación ciudadana</h4>
+                    <ul>
+                        <li><strong>Alfabetización ecológica:</strong> Comprensión de los principios básicos de la ecología</li>
+                        <li><strong>Ciudadanía ambiental:</strong> Derechos y responsabilidades respecto al ambiente</li>
+                        <li><strong>Ciencia ciudadana:</strong> Participación pública en investigación científica</li>
+                        <li><strong>Presupuestos participativos:</strong> Decisión colectiva sobre inversiones públicas</li>
+                    </ul>
+                    
+                    <h4>Políticas y gobernanza para la sostenibilidad</h4>
+                    <ul>
+                        <li><strong>Evaluación de impacto ambiental:</strong> Análisis previo de proyectos de desarrollo</li>
+                        <li><strong>Impuestos verdes:</strong> Gravar actividades contaminantes</li>
+                        <li><strong>Subsidios a prácticas sostenibles:</strong> Apoyo a agricultura orgánica, energías renovables</li>
+                        <li><strong>Compra pública sostenible:</strong> Criterios ambientales en adquisiciones gubernamentales</li>
+                        <li><strong>Acuerdos internacionales:</strong> Convenios sobre cambio climático, biodiversidad, desertificación</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <footer id="footer">
+        <div class="footer-content">
+            <p>Material educativo sobre principios básicos de la naturaleza y sustentabilidad</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+                <a href="#unidad1"><i class="fas fa-seedling"></i> Unidad 1</a>
+                <a href="#unidad2"><i class="fas fa-recycle"></i> Unidad 2</a>
+            </div>
+            <p>© 2023 - Vanessa Jazmin Villarreal Contreras - Matrícula: 2094656</p>
+        </div>
+    </footer>
+
+    <script>
+        // Botón para volver arriba
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Navegación suave
+        document.querySelectorAll('nav a, .header-buttons a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
