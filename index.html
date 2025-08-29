@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principios de la Naturaleza y Sustentabilidad</title>
+    <title>Principios de la naturaleza y sustentabilidad</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --color-primary: #2e7d32;
-            --color-secondary: #1b5e20;
-            --color-accent: #7cb342;
-            --color-light: #f1f8e9;
-            --color-dark: #1b1b1b;
-            --color-text: #333;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    :root {
+            --color-primary: #88c9b9; /* Verde pastel claro */
+            --color-secondary: #6bb39b; /* Verde pastel medio */
+            --color-accent: #a4d4dc; /* Azul pastel claro */
+            --color-light: #f0f7f4; /* Verde pastel muy claro */
+            --color-dark: #5a9367; /* Verde pastel oscuro */
+            --color-text: #4a4a4a; /* Texto gris oscuro */
+            --color-lavender: #c8b0d6; /* Lavanda pastel */
+            --color-highlight: #f9d5bb; /* Durazno pastel */
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
             --transition: all 0.3s ease;
         }
         
@@ -27,12 +29,12 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--color-text);
-            background: linear-gradient(to bottom, #f9f9f9, #e8f5e9);
+            background: linear-gradient(to bottom, #f8fbf8, #f0f7f4);
             min-height: 100vh;
         }
         
         header {
-            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            background: linear-gradient(to right, var(--color-primary), var(--color-accent));
             color: white;
             padding: 2rem 1.5rem;
             text-align: center;
@@ -63,23 +65,29 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            color: white;
         }
         
         .student-info {
             font-size: 0.9rem;
-            opacity: 0.85;
+            opacity: 0.9;
             margin: 1rem 0;
-            padding: 0.5rem;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
+            padding: 0.8rem;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
             display: inline-block;
+            backdrop-filter: blur(5px);
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
         
         .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
             margin-bottom: 1rem;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
         
         .header-buttons {
@@ -104,12 +112,18 @@
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background-color: var(--color-light);
         }
         
         .btn-outline {
             background-color: transparent;
             border: 2px solid white;
             color: white;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--color-primary);
         }
         
         nav {
@@ -137,10 +151,13 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
         }
         
         nav a:hover {
             color: var(--color-accent);
+            background-color: var(--color-light);
         }
         
         .container {
@@ -151,7 +168,7 @@
         
         .unit {
             background-color: white;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 2.5rem;
             margin-bottom: 2.5rem;
             box-shadow: var(--shadow);
@@ -161,7 +178,7 @@
         
         .unit:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
         }
         
         .unit-header {
@@ -181,14 +198,16 @@
         
         .topic {
             margin-bottom: 2.2rem;
-            padding: 1.2rem;
-            border-radius: 8px;
+            padding: 1.5rem;
+            border-radius: 12px;
             background-color: var(--color-light);
             transition: var(--transition);
+            border: 1px solid rgba(136, 201, 185, 0.3);
         }
         
         .topic:hover {
-            background-color: #e8f5e9;
+            background-color: #e6f2ef;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
         
         .topic h3 {
@@ -208,9 +227,9 @@
             background-color: white;
             padding: 1.5rem;
             border-left: 4px solid var(--color-accent);
-            border-radius: 6px;
+            border-radius: 10px;
             margin-bottom: 1.2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
         }
         
         ul {
@@ -232,10 +251,16 @@
         
         .concept-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-top: 4px solid var(--color-accent);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+            border-top: 4px solid var(--color-lavender);
+            transition: var(--transition);
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
         }
         
         .concept-card h4 {
@@ -249,8 +274,9 @@
         .principle-list {
             background: var(--color-light);
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             margin: 1.5rem 0;
+            border: 1px solid rgba(136, 201, 185, 0.3);
         }
         
         .principle-list li {
@@ -259,8 +285,17 @@
             border-left: 3px solid var(--color-accent);
         }
         
+        .download-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2.5rem;
+            background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+            border-radius: 16px;
+            color: white;
+        }
+        
         footer {
-            background-color: var(--color-dark);
+            background: linear-gradient(to right, var(--color-primary), var(--color-accent));
             color: white;
             text-align: center;
             padding: 2.5rem 1.5rem;
@@ -280,12 +315,14 @@
         }
         
         .footer-links a {
-            color: var(--color-accent);
+            color: white;
             text-decoration: none;
             transition: var(--transition);
+            opacity: 0.9;
         }
         
         .footer-links a:hover {
+            opacity: 1;
             text-decoration: underline;
         }
         
@@ -348,9 +385,42 @@
             background-color: var(--color-secondary);
             transform: translateY(-3px);
         }
+        
+        /* Elementos decorativos adicionales */
+        .floating-icon {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .floating-icon:nth-child(1) {
+            top: 20%;
+            left: 5%;
+            font-size: 3rem;
+            color: var(--color-primary);
+        }
+        
+        .floating-icon:nth-child(2) {
+            top: 60%;
+            right: 5%;
+            font-size: 2.5rem;
+            color: var(--color-accent);
+        }
+        
+        .floating-icon:nth-child(3) {
+            bottom: 20%;
+            left: 10%;
+            font-size: 2rem;
+            color: var(--color-lavender);
+        }
     </style>
 </head>
 <body>
+    <!-- Elementos decorativos flotantes -->
+    <i class="floating-icon fas fa-leaf"></i>
+    <i class="floating-icon fas fa-seedling"></i>
+    <i class="floating-icon fas fa-water"></i>
+    
     <header>
         <div class="header-content">
             <h1>Principios Básicos de la Naturaleza y Sustentabilidad</h1>
@@ -375,16 +445,43 @@
             <li><a href="#footer"><i class="fas fa-address-card"></i> Contacto</a></li>
         </ul>
     </nav>
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Principios básicos de la naturaleza y sustentabilidad</h1>
+            
+            <!-- Información del estudiante -->
+            <div class="student-info">
+                <p> Por: Vanessa Jazmin Villarreal Contreras | Matrícula: 2094656</p>
+            </div>
+            
+            <p class="subtitle">Actividad Fundamental 1. Pagina web</p>
+            <div class="header-buttons">
+                <a href="#unidad1" class="btn">Unidad 1</a>
+                <a href="#unidad2" class="btn btn-outline">Unidad 2</a>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#unidad1"><i class="fas fa-seedling"></i> Unidad 1</a></li>
+            <li><a href="#unidad2"><i class="fas fa-recycle"></i> Unidad 2</a></li>
+            <li><a href="#footer"><i class="fas fa-address-card"></i> Contacto</a></li>
+        </ul>
+    </nav>
     
     <div class="container">
         <section id="unidad1" class="unit">
             <h2 class="unit-header">
                 <i class="fas fa-seedling unit-icon"></i>
-                Unidad 1: Principios Básicos de la Naturaleza
+                Unidad 1: Principios básicos de la naturaleza
             </h2>
             
             <div class="topic">
-                <h3><i class="fas fa-leaf topic-icon"></i> 1.1. Conceptos Fundamentales de Ecología</h3>
+                <h3><i class="fas fa-leaf topic-icon"></i> 1.1. Conceptos fundamentales de ecología</h3>
                 <div class="content-box">
                     <p>La ecología es el estudio científico de las interrelaciones entre los organismos y su ambiente abiótico (no vivo) y biótico (vivo). Incluye conceptos como:</p>
                     <ul>
@@ -513,11 +610,11 @@
         <section id="unidad2" class="unit">
             <h2 class="unit-header">
                 <i class="fas fa-recycle unit-icon"></i>
-                Unidad 2: Principios de Sustentabilidad
+                Unidad 2: Principios de sustentabilidad
             </h2>
             
             <div class="topic">
-                <h3><i class="fas fa-globe-americas topic-icon"></i> 2.1. Concepto de Desarrollo Sostenible</h3>
+                <h3><i class="fas fa-globe-americas topic-icon"></i> 2.1. Concepto de desarrollo sostenible</h3>
                 <div class="content-box">
                     <p>El desarrollo sostenible se define como "el desarrollo que satisface las necesidades del presente sin comprometer la capacidad de las futuras generaciones para satisfacer sus propias necesidades" (Comisión Brundtland, 1987).</p>
                     
@@ -562,7 +659,7 @@
             </div>
             
             <div class="topic">
-                <h3><i class="fas fa-shoe-prints topic-icon"></i> 2.2. Huella Ecológica y Capacidad de Carga</h3>
+                <h3><i class="fas fa-shoe-prints topic-icon"></i> 2.2. Huella ecológica y capacidad de carga</h3>
                 <div class="content-box">
                     <p>Medición del impacto humano sobre el planeta y su comparación con la capacidad de la Tierra para regenerar recursos:</p>
                     
@@ -599,7 +696,7 @@
             </div>
             
             <div class="topic">
-                <h3><i class="fas fa-pencil-ruler topic-icon"></i> 2.3. Principios de Diseño Sostenible</h3>
+                <h3><i class="fas fa-pencil-ruler topic-icon"></i> 2.3. Principios de diseño sostenible</h3>
                 <div class="content-box">
                     <p>Enfoques para crear sistemas, productos y entornos que funcionen en armonía con la naturaleza:</p>
                     
@@ -709,7 +806,7 @@
                 <a href="#unidad1"><i class="fas fa-seedling"></i> Unidad 1</a>
                 <a href="#unidad2"><i class="fas fa-recycle"></i> Unidad 2</a>
             </div>
-            <p>© 2-9-2025 - Vanessa Jazmin Villarreal Contreras - Matrícula: 2094656</p>
+            <p>© A 2 de septiembre 2025 - Vanessa Jazmin Villarreal Contreras - Matrícula: 2094656</p>
         </div>
     </footer>
 
@@ -750,4 +847,5 @@
     </script>
 </body>
 </html>
+
 
